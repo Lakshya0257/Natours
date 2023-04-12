@@ -7,7 +7,6 @@
 //   client.close();
 // });
 const mongoose=require("mongoose");
-const tourModel=require('./database/model/tour_model');
 
 
 exports.databaseConnection=()=>{
@@ -19,25 +18,6 @@ exports.databaseConnection=()=>{
 }).then(()=>{
   console.log('Connection Established');
 });
-
-
-
-
-
-const testTour=new tourModel.NewTour({
-  name:'Australia',
-  rating:5.0,
-  price:497
-});
-
-
-
-testTour.save().then(doc=>{
-  console.log(doc);
-}).catch(err=>{
-  console.log(err);
-})
-
 };
 
 
